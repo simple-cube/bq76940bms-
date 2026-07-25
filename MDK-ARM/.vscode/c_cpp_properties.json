@@ -18,7 +18,8 @@
                 "c:\\Users\\childe\\Desktop\\Bms\\Core\\Src",
                 "c:\\Users\\childe\\Desktop\\Bms\\Drivers\\STM32F1xx_HAL_Driver\\Src",
                 "c:\\Users\\childe\\Desktop\\Bms\\Middlewares\\Third_Party\\FreeRTOS\\Source",
-                "c:\\Users\\childe\\Desktop\\Bms\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\MemMang"
+                "c:\\Users\\childe\\Desktop\\Bms\\Middlewares\\Third_Party\\FreeRTOS\\Source\\portable\\MemMang",
+                "c:\\Users\\childe\\Desktop\\Bms\\Task"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

@@ -36,6 +36,13 @@
 "bms\port.o"
 "bms\bq76930.o"
 "bms\i2c1.o"
+"bms\protect_task.o"
+"bms\sample_task.o"
+"bms\balance_task.o"
+"bms\sox_task.o"
+"bms\uart_cmd_task.o"
+"bms\init_task.o"
+"bms\hw_init_task.o"
 --strict --scatter "Bms\Bms.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

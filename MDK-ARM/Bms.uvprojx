@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\BSP</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\BSP;..\Task</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -797,6 +797,46 @@
               <FileName>i2c1.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\i2c1.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Task</GroupName>
+          <Files>
+            <File>
+              <FileName>Protect_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\Protect_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>Sample_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\Sample_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>Balance_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\Balance_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>SOX_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\SOX_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART_Cmd_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\UART_Cmd_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>Init_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\Init_Task.c</FilePath>
+            </File>
+            <File>
+              <FileName>Hw_Init_Task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Task\Hw_Init_Task.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -25,8 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "BQ76930.h"
-#include "i2c1.h"
+#include "Init_Task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,12 +45,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-osThreadId_t InitTaskHandle;
-const osThreadAttr_t InitTask_attributes = {
-  .name = "InitTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityRealtime,
-};
+
 /* USER CODE END Variables */
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -63,7 +57,7 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-void StartInitTask(void *argument);
+
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
@@ -77,7 +71,7 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+	Init_Task();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -102,7 +96,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  InitTaskHandle = osThreadNew(StartInitTask, NULL, &InitTask_attributes);
+
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -124,7 +118,6 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    Get_Update_Data();
     osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
@@ -132,17 +125,8 @@ void StartDefaultTask(void *argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-void StartInitTask(void *argument)
-{
-  /* USER CODE BEGIN StartInitTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    I2C1_Configuration();
-    BQ76930_config();
-    vTaskDelete(NULL);
-  }
+
   /* USER CODE END StartInitTask */
-}
+
 /* USER CODE END Application */
 

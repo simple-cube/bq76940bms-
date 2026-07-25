@@ -1031,13 +1031,12 @@ void BMS_STA(void)
 	sprintf(NEW,"DCV16(0,40,'%s%d%s',3);\r\n","第九节电压:",Batteryval[14],"mV"); 
   UartSend(NEW);
 	
-	delay_ms(100); 
-	sprintf(NEW,"DCV16(0,60,'%s%d%s',3);\r\n","总电压:",Batteryval[15],"mV");	
-  UartSend(NEW); 
+//	delay_ms(100); 
+//	sprintf(NEW,"DCV16(0,60,'%s%d%s',3);\r\n","总电压:",Batteryval[15],"mV");	
+//  UartSend(NEW); 
  	
 	delay_ms(100); 
-	Get_Pack_Voltage(9);
-	sprintf(NEW,"DCV16(0,00,'%s%d%s',3);\r\n","总电压为:",Batteryval[49],"mV"); 
+	sprintf(NEW,"DCV16(0,60,'%s%d%s',3);\r\n","总电压:",Batteryval[49],"mV"); 
   UartSend(NEW);  
 	
   delay_ms(100); 
@@ -1088,7 +1087,8 @@ void BMS_STA(void)
     //Get_Battery13();
    // Get_Battery14();
     Get_Battery15(); 	
-		Get_Update_ALL_Data();//总电压
+//		Get_Update_ALL_Data();//总电压
+		Get_Pack_Voltage(9);//总电压
 	  Get_SOC();
 		Get_BQ1_2_Temp();
     Get_BQ_Current();	

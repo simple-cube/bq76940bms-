@@ -27,28 +27,14 @@ Project File Date:  07/25/2026
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Bms'
-compiling BQ76930.c...
-..\BSP\BQ76930.c(600): warning:  #177-D: variable "i"  was declared but never referenced
-  	int i,Sum_val;
-..\BSP\BQ76930.c(804): warning:  #177-D: variable "Currentbuf"  was declared but never referenced
-     unsigned char Currentbuf[1];
-..\BSP\BQ76930.c(846): warning:  #177-D: variable "Rt"  was declared but never referenced
-  	 float Rt=0;
-..\BSP\BQ76930.c(853): warning:  #177-D: variable "Tempbuf"  was declared but never referenced
-     unsigned char Tempbuf[1];
-..\BSP\BQ76930.c(866): warning:  #177-D: variable "Rt"  was declared but never referenced
-     float Rt=0;
-..\BSP\BQ76930.c(873): warning:  #177-D: variable "Tempbuf"  was declared but never referenced
-     unsigned char Tempbuf[1];
-..\BSP\BQ76930.c(973): warning:  #223-D: function "Can_Send_Msg" declared implicitly
-      Can_Send_Msg(can_buf1,8,0x0001);
-..\BSP\BQ76930.c(1114): warning:  #177-D: variable "sys_stat_2"  was declared but never referenced
-    unsigned char sys_stat_1,sys_stat_2,UV_1,OV_1,UV_2,OV_2,SCD,OCD;
-..\BSP\BQ76930.c: 8 warnings, 0 errors
+compiling UART_Cmd_Task.c...
+..\Task\UART_Cmd_Task.c(127): warning:  #1-D: last line of file ends without a newline
+  }
+..\Task\UART_Cmd_Task.c: 1 warning, 0 errors
 linking...
-Program Size: Code=25868 RO-data=652 RW-data=476 ZI-data=8444  
+Program Size: Code=25112 RO-data=752 RW-data=484 ZI-data=8444  
 FromELF: creating hex file...
-"Bms\Bms.axf" - 0 Error(s), 8 Warning(s).
+"Bms\Bms.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -72,7 +58,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE@6.1.1
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

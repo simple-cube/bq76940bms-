@@ -1,2 +1,33 @@
-Load "Bms\\Bms.axf" 
-Erase Done.Programming Done.Verify OK.Flash Load finished at 12:17:08
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Bms'
+compiling Balance_Task.c...
+..\Task\Balance_Task.c(1): warning:  #1-D: last line of file ends without a newline
+  #include"Balance_Task.h"
+..\Task\Balance_Task.h(5): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Task\Balance_Task.c: 2 warnings, 0 errors
+compiling Protect_Task.c...
+..\Task\Protect_Task.c(1): warning:  #1-D: last line of file ends without a newline
+  #include "Protect_Task.h"
+..\Task\Protect_Task.h(5): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Task\Protect_Task.c: 2 warnings, 0 errors
+compiling UART_Cmd_Task.c...
+..\Task\UART_Cmd_Task.c(1): warning:  #1-D: last line of file ends without a newline
+  #include "UART_Cmd_Task.h"
+..\Task\UART_Cmd_Task.c: 1 warning, 0 errors
+compiling Sample_Task.c...
+..\Task\Sample_Task.c(1): warning:  #1-D: last line of file ends without a newline
+  #include "Sample_Task.h"
+..\Task\Sample_Task.h(5): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Task\Sample_Task.c: 2 warnings, 0 errors
+compiling SOX_Task.c...
+..\Task\SOX_Task.c(1): warning:  #1-D: last line of file ends without a newline
+  #include "SOX_Task.h"
+..\Task\SOX_Task.c(1): error:  #5: cannot open source input file "SOX_Task.h": No such file or directory
+  #include "SOX_Task.h"
+..\Task\SOX_Task.c: 1 warning, 1 error
+"Bms\Bms.axf" - 1 Error(s), 8 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:01
