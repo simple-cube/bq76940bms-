@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Bms\Bms.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Bms\Bms.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Jul 25 18:58:31 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Jul 25 19:26:56 2026
 <BR><P>
 <H3>Maximum Stack Usage =        324 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -23,6 +23,7 @@ Mutually Recursive functions
  <LI><a href="#[e]">HardFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e]">HardFault_Handler</a><BR>
  <LI><a href="#[f]">MemManage_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[f]">MemManage_Handler</a><BR>
  <LI><a href="#[d]">NMI_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[d]">NMI_Handler</a><BR>
+ <LI><a href="#[46]">SampleTask</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[46]">SampleTask</a><BR>
  <LI><a href="#[48]">StartDefaultTask</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[48]">StartDefaultTask</a><BR>
  <LI><a href="#[ec]">UART_EndRxTransfer</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[ec]">UART_EndRxTransfer</a><BR>
  <LI><a href="#[11]">UsageFault_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[11]">UsageFault_Handler</a><BR>
@@ -1293,10 +1294,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BQ76930_config
 </UL>
 
-<P><STRONG><a name="[46]"></a>SampleTask</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, sample_task.o(i.SampleTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = SampleTask &rArr; Get_BQ1_2_Temp &rArr; log &rArr; __kernel_poly &rArr; __aeabi_dmul
+<P><STRONG><a name="[46]"></a>SampleTask</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, sample_task.o(i.SampleTask))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168 + In Cycle
+<LI>Call Chain = SampleTask &rArr;  SampleTask (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SampleTask
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Pack_Voltage
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Battery7
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Battery6
@@ -1310,6 +1313,8 @@ Global Symbols
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_BQ_Current
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_BQ1_2_Temp
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_STA
+</UL>
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SampleTask
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> init_task.o(i.Init_Task)
 </UL>
@@ -1358,8 +1363,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
 
-<P><STRONG><a name="[47]"></a>UART_Cmd_Task</STRONG> (Thumb, 542 bytes, Stack size 80 bytes, uart_cmd_task.o(i.UART_Cmd_Task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208 + Unknown Stack Size
+<P><STRONG><a name="[47]"></a>UART_Cmd_Task</STRONG> (Thumb, 414 bytes, Stack size 64 bytes, uart_cmd_task.o(i.UART_Cmd_Task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = UART_Cmd_Task &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UartSend

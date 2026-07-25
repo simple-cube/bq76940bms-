@@ -1,7 +1,10 @@
 #include "Sample_Task.h"
 
 void SampleTask(void *argument)
-{	
+{
+		while(1)
+	 {
+		
 	  Get_Battery1();
     Get_Battery2();
     //Get_Battery3();
@@ -23,5 +26,5 @@ void SampleTask(void *argument)
     Get_BQ_Current();	
     BMS_STA();
 	  osDelay(100);
-
+   }
 }
