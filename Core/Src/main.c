@@ -95,14 +95,13 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-	I2C1_Configuration();
-	BQ76930_config();
+
 	
   /* USER CODE END 2 */
 
   /* Init scheduler */
-//  osKernelInitialize();  /* Call init function for freertos objects (in cmsis_os2.c) */
-//  MX_FREERTOS_Init();
+  osKernelInitialize();  /* Call init function for freertos objects (in cmsis_os2.c) */
+  MX_FREERTOS_Init();
 
   /* Start scheduler */
   osKernelStart();
@@ -114,7 +113,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		Get_Update_Data();
+	
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
