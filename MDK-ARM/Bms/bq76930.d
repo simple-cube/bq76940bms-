@@ -30,6 +30,7 @@ bms\bq76930.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 bms\bq76930.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 bms\bq76930.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 bms\bq76930.o: ..\BSP\i2c1.h
+bms\bq76930.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 bms\bq76930.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 bms\bq76930.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 bms\bq76930.o: ../Core/Inc/usart.h

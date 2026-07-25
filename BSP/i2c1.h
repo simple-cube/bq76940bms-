@@ -1,13 +1,13 @@
 #ifndef __I2C1_H
 #define __I2C1_H			 
 #include "stm32f1xx_hal.h"
-
+#include "cmsis_os2.h"
 /* Type definitions for backward compatibility */
 typedef uint8_t  u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
 
-#define delay_ms(ms)  HAL_Delay(ms)
+#define delay_ms(ms)  osDelay(ms)
 
 /* Private define ------------------------------------------------------------*/
 

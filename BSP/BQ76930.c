@@ -579,7 +579,7 @@ void Get_Pack_Voltage(uint8_t cell)//cell：串联的电池数
     pack_mv = (int32_t)(vbat_uv / 1000LL);  // 转换为mV
 
     // 3. 存入全局数组
-//    Batteryval[15] = (int)pack_mv;
+    Batteryval[49] = (int)pack_mv;
 
     // 4. 打包到通信缓冲区（保持你原有的协议格式）
 //    shang[32]  = (uint8_t)(Batteryval[15] >> 8);
@@ -1034,7 +1034,12 @@ void BMS_STA(void)
 	delay_ms(100); 
 	sprintf(NEW,"DCV16(0,60,'%s%d%s',3);\r\n","总电压:",Batteryval[15],"mV");	
   UartSend(NEW); 
-  
+ 	
+	delay_ms(100); 
+	Get_Pack_Voltage(9);
+	sprintf(NEW,"DCV16(0,00,'%s%d%s',3);\r\n","总电压为:",Batteryval[49],"mV"); 
+  UartSend(NEW);  
+	
   delay_ms(100); 
 	sprintf(NEW,"DCV16(0,80,'%s%d%s',3);\r\n","电池SOC为:",Batteryval[16],"%"); 
   UartSend(NEW); 
@@ -1048,7 +1053,7 @@ void BMS_STA(void)
 	delay_ms(100); 
 	sprintf(NEW,"DCV16(0,00,'%s%d%s',3);\r\n","当前电流为:",Batteryval[17],"mA"); 
   UartSend(NEW); 
-  
+
 	delay_ms(100);	
 	sprintf(NEW,"DCV16(0,20,'%s',3);\r\n","HWLLO WORLD ！"); 
   UartSend(NEW);
