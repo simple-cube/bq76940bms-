@@ -99,13 +99,10 @@ void UART_Cmd_Task(void *argument)
 		sprintf(NEW,"DCV16(0,40,'%s%d%s',3);\r\n","第九节电压:",Batteryval[14],"mV"); 
 		UartSend(NEW);
 		
-	//	delay_ms(100); 
-	//	sprintf(NEW,"DCV16(0,60,'%s%d%s',3);\r\n","总电压:",Batteryval[15],"mV");	
-	//  UartSend(NEW); 
-		
-//		delay_ms(100); 
-		sprintf(NEW,"DCV16(0,60,'%s%d%s',3);\r\n","总电压:",Batteryval[49],"mV"); 
-		UartSend(NEW);  
+//	delay_ms(100); 
+		sprintf(NEW,"DCV16(0,60,'%s%d%s',3);\r\n","总电压:",Batteryval[15],"mV");	
+	  UartSend(NEW); 
+		 
 		
 //		delay_ms(100); 
 		sprintf(NEW,"DCV16(0,80,'%s%d%s',3);\r\n","电池SOC为:",Batteryval[16],"%"); 
@@ -125,6 +122,6 @@ void UART_Cmd_Task(void *argument)
 		sprintf(NEW,"DCV16(0,20,'%s',3);\r\n","HWLLO WORLD ！"); 
 		UartSend(NEW);
 		
-		delay_ms(200);
+		delay_ms(1000);
 	}
 }

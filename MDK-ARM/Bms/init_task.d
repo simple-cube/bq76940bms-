@@ -45,3 +45,4 @@ bms\init_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 bms\init_task.o: ..\BSP\i2c1.h
 bms\init_task.o: ..\Task\Sample_Task.h
 bms\init_task.o: ..\Task\UART_Cmd_Task.h
+bms\init_task.o: ..\Task\SOX_Task.h
