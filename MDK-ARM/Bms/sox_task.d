@@ -13,7 +13,7 @@ bms\sox_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_o
 bms\sox_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 bms\sox_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 bms\sox_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-bms\sox_task.o: ..\BSP\BQ76930.h
+bms\sox_task.o: ../BSP/BQ76930.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 bms\sox_task.o: ../Core/Inc/stm32f1xx_hal_conf.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -37,8 +37,9 @@ bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 bms\sox_task.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-bms\sox_task.o: ..\BSP\i2c1.h
+bms\sox_task.o: ../BSP/i2c1.h

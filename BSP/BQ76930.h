@@ -192,5 +192,27 @@ void Led_Alarm(void);
 void Get_SOC(void);
 void Get_Pack_Voltage(uint8_t cell);
 
+/* 开启均衡 */
+void Battery1_Balance(void);
+void Battery2_Balance(void);
+void Battery5_Balance(void);
+void Battery6_Balance(void);
+void Battery7_Balance(void);
+void Battery10_Balance(void);
+void Battery11_Balance(void);
+void Battery12_Balance(void);
+void Battery15_Balance(void);
+
+/* 关闭均衡 */
+void Battery1_Unbalance(void);
+void Battery2_Unbalance(void);
+void Battery5_Unbalance(void);
+void Battery6_Unbalance(void);
+void Battery7_Unbalance(void);
+void Battery10_Unbalance(void);
+void Battery11_Unbalance(void);
+void Battery12_Unbalance(void);
+void Battery15_Unbalance(void);
+
 
 #endif

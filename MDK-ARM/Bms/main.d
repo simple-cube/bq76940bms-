@@ -25,6 +25,7 @@ bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h
 bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h
 bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 bms\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
@@ -41,7 +42,8 @@ bms\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 bms\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 bms\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 bms\main.o: ../Core/Inc/can.h
+bms\main.o: ../Core/Inc/iwdg.h
 bms\main.o: ../Core/Inc/usart.h
 bms\main.o: ../Core/Inc/gpio.h
-bms\main.o: ..\BSP\BQ76930.h
-bms\main.o: ..\BSP\i2c1.h
+bms\main.o: ../BSP/BQ76930.h
+bms\main.o: ../BSP/i2c1.h

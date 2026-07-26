@@ -717,37 +717,137 @@ fuction: 均衡的1、2、5、6、7、10分别表示电池组上第1到6节的均衡，
 description:
 Parameters: None
 ******************************************/
+// ------------------------------------------------------------
+// 开启均衡函数（读-修改-写）
+// ------------------------------------------------------------
 void Battery1_Balance(void)
 {
-   IIC1_write_one_byte_CRC(CELLBAL1,0X01);
+    uint8_t reg = IIC1_read_one_byte(CELLBAL1);
+    reg |= 0x01;
+    IIC1_write_one_byte_CRC(CELLBAL1, reg);
 }
 
 void Battery2_Balance(void)
 {
-   IIC1_write_one_byte_CRC(CELLBAL1,0X02);
+    uint8_t reg = IIC1_read_one_byte(CELLBAL1);
+    reg |= 0x02;
+    IIC1_write_one_byte_CRC(CELLBAL1, reg);
 }
 
 void Battery5_Balance(void)
 {
-   IIC1_write_one_byte_CRC(CELLBAL1,0X10);
+    uint8_t reg = IIC1_read_one_byte(CELLBAL1);
+    reg |= 0x10;
+    IIC1_write_one_byte_CRC(CELLBAL1, reg);
 }
 
 void Battery6_Balance(void)
 {
-   IIC1_write_one_byte_CRC(CELLBAL2,0X01);
+    uint8_t reg = IIC1_read_one_byte(CELLBAL2);
+    reg |= 0x01;
+    IIC1_write_one_byte_CRC(CELLBAL2, reg);
 }
 
 void Battery7_Balance(void)
 {
-   IIC1_write_one_byte_CRC(CELLBAL2,0X02);
+    uint8_t reg = IIC1_read_one_byte(CELLBAL2);
+    reg |= 0x02;
+    IIC1_write_one_byte_CRC(CELLBAL2, reg);
 }
 
 void Battery10_Balance(void)
 {
-   IIC1_write_one_byte_CRC(CELLBAL2,0X10);
+    uint8_t reg = IIC1_read_one_byte(CELLBAL2);
+    reg |= 0x10;
+    IIC1_write_one_byte_CRC(CELLBAL2, reg);
 }
 
+void Battery11_Balance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL3);
+    reg |= 0x01;
+    IIC1_write_one_byte_CRC(CELLBAL3, reg);
+}
 
+void Battery12_Balance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL3);
+    reg |= 0x02;
+    IIC1_write_one_byte_CRC(CELLBAL3, reg);
+}
+
+void Battery15_Balance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL3);
+    reg |= 0x10;
+    IIC1_write_one_byte_CRC(CELLBAL3, reg);
+}
+
+// ------------------------------------------------------------
+// 关闭均衡函数（读-修改-写，只清除对应位）
+// ------------------------------------------------------------
+void Battery1_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL1);
+    reg &= ~0x01;
+    IIC1_write_one_byte_CRC(CELLBAL1, reg);
+}
+
+void Battery2_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL1);
+    reg &= ~0x02;
+    IIC1_write_one_byte_CRC(CELLBAL1, reg);
+}
+
+void Battery5_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL1);
+    reg &= ~0x10;
+    IIC1_write_one_byte_CRC(CELLBAL1, reg);
+}
+
+void Battery6_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL2);
+    reg &= ~0x01;
+    IIC1_write_one_byte_CRC(CELLBAL2, reg);
+}
+
+void Battery7_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL2);
+    reg &= ~0x02;
+    IIC1_write_one_byte_CRC(CELLBAL2, reg);
+}
+
+void Battery10_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL2);
+    reg &= ~0x10;
+    IIC1_write_one_byte_CRC(CELLBAL2, reg);
+}
+
+void Battery11_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL3);
+    reg &= ~0x01;
+    IIC1_write_one_byte_CRC(CELLBAL3, reg);
+}
+
+void Battery12_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL3);
+    reg &= ~0x02;
+    IIC1_write_one_byte_CRC(CELLBAL3, reg);
+}
+
+void Battery15_Unbalance(void)
+{
+    uint8_t reg = IIC1_read_one_byte(CELLBAL3);
+    reg &= ~0x10;
+    IIC1_write_one_byte_CRC(CELLBAL3, reg);
+}
 /****************************************
 fuction: void BQ_1_config(void)
 description:BQ76930初始化
