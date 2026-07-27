@@ -88,7 +88,7 @@ void UART_Cmd_Task(void *argument)
 		UartSend("CLR(61);\r\n");
 
 //		delay_ms(100); 
-		sprintf(NEW,"DCV16(0,0,'%s%d%s',3);\r\n","第七节电压:",Batteryval[10],"mV"); 
+		sprintf(NEW,"DCV16(0,0,'%s%d%s',3);\r\n","第七节电压:",Batteryval[10],"mV");
 		UartSend(NEW);
 		
 //		delay_ms(100); 

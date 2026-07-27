@@ -75,6 +75,6 @@ void Protect_Task(void *argument)
 			
 			}		
 */		
-			osDelay(200);
+		osDelay(200);
 	}
 }	

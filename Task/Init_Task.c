@@ -17,14 +17,14 @@ const osThreadAttr_t HardwareInitTask_attributes = {
 osThreadId_t SampleTaskHandle;
 const osThreadAttr_t SampleTask_attributes = {
   .name = "SampleTask",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityHigh,
 };
 //串口发送任务
 osThreadId_t UARTTaskHandle;
 const osThreadAttr_t UARTTask_attributes = {
   .name = "UARTTask",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityBelowNormal,
 };
 //计算SOX任务
@@ -45,7 +45,7 @@ const osThreadAttr_t ProtectTask_attributes = {
 osThreadId_t WDOGFeedTaskHandle;
 const osThreadAttr_t WDOGFeedTask_attributes = {
   .name = "WDOGFeedTask",
-  .stack_size = 128 * 1,
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityHigh2,
 };
 /* Message queues ------------------------------------------------------------*/
@@ -80,6 +80,6 @@ void WDOGFeedTask(void *argument)
   while(1)
   {
 		HAL_IWDG_Refresh(&hiwdg);
-    osDelay(300);
+    osDelay(200);
   }
 }
