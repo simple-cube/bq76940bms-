@@ -21,15 +21,14 @@ void UART_Cmd_Task(void *argument)
 {
 	while(1)
 	{
-	  char NEW[50]={0};
+	  char NEW[80]={0};
 	  int n;
 
+	  /* Send shang[] binary protocol data via USART1 (HMI display) */
 	  for(n=0;n<50;n++)
-
 		{
+			while(!__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TXE));
 			USART1->DR = (shang[n] & (uint16_t)0x01FF);
-			delay_ms(2);
-			
 		}
 		
 	  USART2_Printf( shang1,20,ASCII_CODE);	
@@ -122,6 +121,6 @@ void UART_Cmd_Task(void *argument)
 		sprintf(NEW,"DCV16(0,20,'%s',3);\r\n","HWLLO WORLD £¡"); 
 		UartSend(NEW);
 		
-		delay_ms(1000);
+		osDelay(1000);
 	}
 }

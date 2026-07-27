@@ -85,7 +85,11 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+  /* Blink PA8 fast to indicate HardFault on scope */
+  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
+  for(volatile uint32_t i=0; i<500000; i++);
+  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
+  for(volatile uint32_t i=0; i<500000; i++);
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {

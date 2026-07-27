@@ -12,6 +12,10 @@
 //头文件
 #include "i2c1.h"
 
+/* I2C bus mutex for RTOS multi-task access protection */
+osMutexId_t I2C1_MutexHandle;
+
+
  
 
 /**
@@ -210,7 +214,7 @@ u32 IIC1_read_len_byte(u16 ReadAddr,u8 Len)
 
 void  IIC1_write_one_byte(u16 WriteAddr,u8 DataToWrite)
 {			
-	
+	osMutexAcquire(I2C1_MutexHandle, osWaitForever);
     I2C1_Start();  
 	
 		I2C1_SendByte(0X10+((WriteAddr/256)<<1));   //发送器件地址0XA0,写数据 
@@ -221,6 +225,7 @@ void  IIC1_write_one_byte(u16 WriteAddr,u8 DataToWrite)
 	  I2C1_SendByte(DataToWrite);     //发送字节							   
     I2C1_WaitAck();	    	   
     I2C1_Stop();//产生一个停止条件 
+	  osMutexRelease(I2C1_MutexHandle);
 	  delay_ms(10);
   
 }
@@ -240,8 +245,7 @@ void  IIC1_write_len_byte(u16 WriteAddr,u8 DataToWrite,u8 Len)
 
 void IIC1_write_one_byte_CRC(u16 WriteAddr,u16 DataToWrite)
 {
-		
-  
+	osMutexAcquire(I2C1_MutexHandle, osWaitForever);
   unsigned char DataBuffer[4];
 	
   DataBuffer[0] = 0X08 << 1;
@@ -265,7 +269,8 @@ void IIC1_write_one_byte_CRC(u16 WriteAddr,u16 DataToWrite)
 
 u8 IIC1_read_one_byte(u16 ReadAddr)
 {				  
-	u8 temp=0;		  	    																 
+	u8 temp=0;
+	osMutexAcquire(I2C1_MutexHandle, osWaitForever);
   I2C1_Start();  
 	I2C1_SendByte(0x08 << 1) ;   //发送器件地址0XA0,写数据 	 
 	I2C1_WaitAck();
@@ -276,6 +281,7 @@ u8 IIC1_read_one_byte(u16 ReadAddr)
 	I2C1_WaitAck(); 
     temp=I2C1_ReceiveByte();		   
     I2C1_Stop();//产生一个停止条件
+    osMutexRelease(I2C1_MutexHandle);
     return temp;
 }
 

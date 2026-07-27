@@ -98,7 +98,7 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-	UartSend("≥ı ºªØ");
+	UartSend("chushihua");
   /* USER CODE END 2 */
 
   /* Init scheduler */

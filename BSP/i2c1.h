@@ -6,6 +6,9 @@
 typedef uint8_t  u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
+/* I2C bus mutex for RTOS multi-task access protection */
+extern osMutexId_t I2C1_MutexHandle;
+
 
 #define delay_ms(ms)  osDelay(ms)
 

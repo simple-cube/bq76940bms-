@@ -48,3 +48,5 @@ bms\init_task.o: ..\Task\Sample_Task.h
 bms\init_task.o: ..\Task\UART_Cmd_Task.h
 bms\init_task.o: ..\Task\SOX_Task.h
 bms\init_task.o: ..\Task\Protect_Task.h
+bms\init_task.o: ../Core/Inc/usart.h
+bms\init_task.o: ../Core/Inc/main.h
